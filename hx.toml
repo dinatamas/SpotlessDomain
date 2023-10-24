@@ -1,0 +1,10 @@
+# https://docs.helix-editor.com/configuration.html
+
+theme = "hx"
+
+[editor]
+true-color = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"

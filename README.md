@@ -32,6 +32,27 @@ Spotless Domain
 * Treesitter: `:TSInstallInfo`, `:TSInstall`
 * LSP: `:Mason`, `:MasonInstall`
 
+## Wifi Workaround
+
+Check `rtw_8822be` error messages in `dmesg`.
+
+Edit `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`.
+Add `pcie_aspm=off` and `pcie_aspm.policy=performance`.
+Try any combination of these parameters.
+Run `sudo update-grub`.
+
+Check kernel modules: `lsmod | grep -e rtw`.
+Create `/etc/modprobe.d/rtw88.conf`.
+Add `options rtw88_pci disable_aspm=y`.
+Add `options rtw88_core disable_lps_deep=y`.
+Confirm with `modinfo rtw88_pci` and `modinfo rtw88_core`.
+
+Issue links:
+- [1](https://answers.launchpad.net/ubuntu/+question/691415)
+- [2](https://github.com/lwfinger/rtw88/issues/30)
+- [3](https://bugzilla.kernel.org/show_bug.cgi?id=216386)
+- [4](https://forum.garudalinux.org/t/rtl8822be-issues-with-realtek-wifi/10720/57)
+
 ## References
 
 - [NvChad](https://nvchad.com/)

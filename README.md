@@ -1,9 +1,17 @@
 Spotless Domain
 ===============
 
-## Kali Installation
+## Installing Linux
 
-* Everything default.
+Check the drive and mount points: `lsblk`
+
+Unmount if necessary: `sudo umount /dev/sdb1`
+
+Verify the ISO image: `shasum -a 256 *.iso`
+
+Prepare the drive: `sudo dd if=*.iso of=/dev/sdb status=progress`
+
+Install Linux using the prepared installatium medium.
 
 ## Wifi Workaround
 

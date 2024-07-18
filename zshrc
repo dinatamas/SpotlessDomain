@@ -29,7 +29,6 @@ alias eza='eza -algh --icons --git'
 alias fd='fd -pHL'
 alias rg='rg -pSL --hidden -M=2000'
 
-
 export FZF_DEFAULT_OPTS="--color=gutter:-1,bg+:-1 --padding 1 --reverse"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-scrollbar --info=right"
 if [ -n "$TMUX" ]; then export FZF_TMUX=1; export FZF_TMUX_OPTS="-p"; fi
